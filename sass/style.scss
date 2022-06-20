@@ -1,0 +1,22 @@
+@import "../node_modules/normalize.css/normalize.css";
+//abstracts
+@import "abstracts/constants";
+@import "abstracts/placeholders";
+@import "abstracts/mixins";
+//base
+@import "base/base";
+@import "base/burger";
+//components
+@import "components/about";
+@import "components/donation";
+@import "components/footer";
+@import "components/header";
+@import "components/help";
+@import "components/not-only";
+@import "components/our-friends";
+//layout
+@import "layout/wrapper";
+@import "layout/column";
+//pages
+@import "pages/main";
+@import "pages/pets";

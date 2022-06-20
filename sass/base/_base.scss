@@ -1,0 +1,67 @@
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	&._lock {
+		overflow: hidden;
+	}
+}
+
+h1 {
+  	@extend %font-head;
+  	@include font($size: 3.2rem, $height: 3.52rem, $spacing: 0.06em);
+}
+
+h2 {
+  	@extend %font-head;
+  	@include font($size: 4.4rem, $height: 5.72rem);
+}
+
+h3 {
+  	@extend %font-head;
+  	@include font($size: 3.5rem, $height: 4.5rem, $spacing: 0.06em);
+}
+
+h4 {
+ 	@extend %font-head;
+  	@include font($size: 2.0rem, $height: 2.3rem, $spacing: 0.06em);
+}
+
+h5 {
+  	@extend %font-head;
+  	@include font($size: 1.5rem, $height: 1.65rem, $spacing: 0.06em);
+}
+
+.button-control {
+	@extend %font-head;
+  	@include font($size: 2.0rem, $height: 2.3rem, $spacing: 0.06em);
+	cursor: pointer;
+	width: 52px;
+	height: 52px;
+	border-radius: 100%;
+	color: $color-dark-3xl;
+	border: 2px solid $color-primary;
+	background: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.5s;
+	&:hover {
+		background: $color-primary;
+	}
+}
+
+.disabled_button {
+	cursor: default;
+	color: $color-dark-s;
+	border: 2px solid $color-dark-s;
+	&:hover {
+		background: transparent;
+	}
+}
+
+

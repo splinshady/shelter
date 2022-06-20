@@ -1,0 +1,115 @@
+.donation {
+    background-color: $color-light-l;
+}
+
+.donation__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0 100px;
+}
+
+.donation__img {
+    width: 42.083333%;
+    margin-right: 30px;
+}
+
+.donation__content {
+    width: 380px;
+}
+
+.donation__title {
+    color: $color-dark-l;
+    margin: 0 0 20px 0;
+}
+
+.donation__bank-type {
+    color: $color-dark-l;
+    margin: 0 0 20px 0;
+}
+
+.credit-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 349px;
+    height: 43px;
+    background-color: $color-primary;
+    border-radius: 9px;
+    margin: 0 0 20px 0;
+    transition: 0.5s;
+    &:hover {
+        cursor: pointer;
+        background-color: $color-primary-light;
+    }
+}
+
+.credit-card__number {
+    color: $color-dark-l;
+    list-style: none;
+}
+
+.donation__legal-info {
+    color: $color-dark-m;
+    @extend %font-paragraph;
+    @include font (1.2rem, 1.8rem, $style: italic);
+    margin: 0;
+}
+
+@media screen and (max-width : 1279px) {
+    .donation__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .donation__img {
+        width: 71.33%;
+        margin-right: 0;
+    }
+
+    .donation__content {
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width : 767px) {
+    .donation__wrapper {
+        padding: 0;
+    }
+
+    .donation__title{
+        @include font($size: 2.5rem, $height: 3.25rem, $spacing: 0.06em);
+        margin: 42px 0 20px;
+        text-align: center;
+    }
+
+    .donation__bank-type {
+        white-space: nowrap;
+        @include font($size: 1.5rem, $height: 2.4rem);
+    }
+
+    .donation__content {
+        width: 280px;
+        margin-bottom: 42px;
+    }
+
+    .credit-card {
+        width: 280px;
+    }
+
+    .credit-card__number {
+        text-align: center;
+        @include font($size: 1.5rem, $height: 1.65rem, $spacing: 0.06em);
+    }
+
+    .donation__legal-info {
+        text-align: justify;
+    }
+
+    .donation__img {
+        width: 260px;
+        margin-right: 0;
+        padding-bottom: 42px;
+    }
+}
