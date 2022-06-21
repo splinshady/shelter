@@ -56,11 +56,11 @@ h5 {
 }
 
 .disabled_button {
-	cursor: default;
-	color: $color-dark-s;
-	border: 2px solid $color-dark-s;
+	cursor: default !important;
+	color: $color-dark-s !important;
+	border: 2px solid $color-dark-s !important;
 	&:hover {
-		background: transparent;
+		background: transparent !important;
 	}
 }
 

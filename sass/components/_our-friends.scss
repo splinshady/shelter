@@ -9,6 +9,11 @@
     justify-content: space-between;
 }
 
+.our-friends__slide-container {
+    overflow: hidden;
+    flex-basis: 82.5%;
+}
+
 .our-friends__title {
     text-align: center;
     color: $color-dark-l;
@@ -20,7 +25,6 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    flex-basis: 82.5%;
 }
 
 .slider-card__img {
@@ -121,6 +125,34 @@
     position: relative;
     top: 18px;
     left: 17px;
+}
+
+@keyframes shiftLeft {
+    from {transform: translate(0);}
+    to {transform: translate(-110%);}
+}
+
+@keyframes shiftLeftBack {
+    from {transform: translate(110%);}
+    to {transform: translate(0);}
+}
+
+.translate-left {
+    animation: shiftLeft 0.5s 1 ease-in-out;
+}
+
+.translate-left-back {
+    animation: shiftLeftBack 0.5s 1 ease-in-out;
+}
+
+.translate-right {
+    animation: shiftLeft 0.5s 1 ease-in-out;
+    animation-direction: reverse;
+}
+
+.translate-right-back {
+    animation: shiftLeftBack 0.5s 1 ease-in-out;
+    animation-direction: reverse;
 }
 
 @media screen and (max-width : 1279px) {
