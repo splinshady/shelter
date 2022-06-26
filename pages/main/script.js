@@ -62,6 +62,7 @@ navigationLinksPets.forEach(link => {
 const data = [
     {
         "name": "Jennifer",
+        "dataId": "1",
         "img": "../../assets/images/pets-jennifer.png",
         "type": "Dog",
         "breed": "Labrador",
@@ -73,6 +74,7 @@ const data = [
     },
     {
         "name": "Sophia",
+        "dataId": "2",
         "img": "../../assets/images/sof.png",
         "type": "Dog",
         "breed": "Shih tzu",
@@ -84,6 +86,7 @@ const data = [
     },
     {
         "name": "Woody",
+        "dataId": "3",
         "img": "../../assets/images/pets-woody.png",
         "type": "Dog",
         "breed": "Golden Retriever",
@@ -95,6 +98,7 @@ const data = [
     },
     {
         "name": "Scarlett",
+        "dataId": "4",
         "img": "../../assets/images/scarlett.png",
         "type": "Dog",
         "breed": "Jack Russell Terrier",
@@ -106,6 +110,7 @@ const data = [
     },
     {
         "name": "Katrine",
+        "dataId": "5",
         "img": "../../assets/images/pets-katrine.png",
         "type": "Cat",
         "breed": "British Shorthair",
@@ -117,6 +122,7 @@ const data = [
     },
     {
         "name": "Timmy",
+        "dataId": "6",
         "img": "../../assets/images/timmy.png",
         "type": "Cat",
         "breed": "British Shorthair",
@@ -128,6 +134,7 @@ const data = [
     },
     {
         "name": "Freddie",
+        "dataId": "7",
         "img": "../../assets/images/freddie.png",
         "type": "Cat",
         "breed": "British Shorthair",
@@ -139,6 +146,7 @@ const data = [
     },
     {
         "name": "Charly",
+        "dataId": "8",
         "img": "../../assets/images/charly.png",
         "type": "Dog",
         "breed": "Jack Russell Terrier",
@@ -161,16 +169,18 @@ const generateArrArticles = (data) => {
 
 
 class Article {
-    constructor({ name, img, breed, ...rest }) {
+    constructor({ name, img, breed, dataId, type, ...rest }) {
         this.name = name;
         this.img = img;
         this.breed = breed;
+        this.dataId = dataId;
     }
 
     generateArticle() {
         let template = '';
         let article = document.createElement('article');
         article.className = 'slider-card';
+        article.setAttribute('data-id', `${this.dataId}`);
 
         this.img &&
             (template += `<img src=${this.img} alt=${this.breed} class="slider-card__img">`);
@@ -195,8 +205,10 @@ const renderArticle = () => {
         wrapper.append(arrOfArticleTemplate[i].generateArticle());
     }
     wrapper.addEventListener('click', (event) => {
-        console.log(event.target);
-        let modal = new Modal();
+        let clickedCardId = event.target.closest('.slider-card').getAttribute('data-id');
+        let dataCard = data.find(item => item.dataId == clickedCardId);
+        
+        let modal = new Modal(dataCard);
         modal.buildModal();
     })
 }
