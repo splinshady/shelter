@@ -1030,6 +1030,7 @@ a {
   background-image: url(../../assets/icons/close-btnsvg.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .modal__img {

@@ -1,3 +1,5 @@
+import { Modal } from "./modal.js";
+
 const burger = document.querySelector('.burger');
 const headerNavigation = document.querySelector('.header__navigation');
 const navigation = document.querySelector('.navigation');
@@ -192,6 +194,11 @@ const renderArticle = () => {
     for (let i = 0; i < 3; i++) {
         wrapper.append(arrOfArticleTemplate[i].generateArticle());
     }
+    wrapper.addEventListener('click', (event) => {
+        console.log(event.target);
+        let modal = new Modal();
+        modal.buildModal();
+    })
 }
 
 if (data) {
