@@ -94,6 +94,18 @@ export const data = [
     "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
     "diseases": ["deafness", "blindness"],
     "parasites": ["lice", "fleas"]
+  },
+  {
+    "name": "Noy",
+    "dataId": "9",
+    "img": "../../assets/images/noy.jpeg",
+    "type": "Dog",
+    "breed": "Jack Russell Terrier",
+    "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
+    "age": "8 years",
+    "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+    "diseases": ["deafness", "blindness"],
+    "parasites": ["lice", "fleas"]
   }
 ];
 

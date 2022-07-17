@@ -54,15 +54,6 @@ navigationLinksPets.forEach(link => {
 })
 
 
-const generateArrArticles = (data) => {
-  let articleArr = [];
-  data.forEach(article => {
-    articleArr.push(new Article(article))
-  });
-  return articleArr;
-}
-
-
 class Article {
   constructor({name, img, breed, dataId, type, ...rest}) {
     this.name = name;
@@ -91,14 +82,36 @@ class Article {
   }
 }
 
-const arrOfArticleTemplate = generateArrArticles(data);
-const wrapperOurFriends = document.querySelector('.our-friends__slider');
+const generateArrArticles = (data) => {
+  let articleArr = [];
+  data.forEach(article => {
+    articleArr.push(new Article(article))
+  });
+  return articleArr;
+}
 
-const renderArticle = () => {
+const arrOfArticleTemplate = generateArrArticles(data);
+const wrapperOurFriends = document.querySelector('.our-friends__slide-container');
+
+const renderCarousel = () => {
   wrapperOurFriends.innerHTML = '';
+
+  let carousel = document.createElement('div');
+  carousel.className = 'our-friends__courusel';
+
+  let count = 0;
   for (let i = 0; i < 3; i++) {
-    wrapperOurFriends.append(arrOfArticleTemplate[i].generateArticle());
+    let slide = document.createElement('div');
+    slide.className = 'our-friends__slider';
+    for (let j = 0; j < 3; j++) {
+      slide.append(arrOfArticleTemplate[count].generateArticle());
+      console.log(count)
+      count++;
+    }
+    carousel.append(slide);
   }
+
+  wrapperOurFriends.append(carousel);
 
   wrapperOurFriends.addEventListener('click', (event) => {
     let clickedCardId = event.target.closest('.slider-card').getAttribute('data-id');
@@ -110,5 +123,5 @@ const renderArticle = () => {
 }
 
 if (data) {
-  renderArticle();
+  renderCarousel();
 }
