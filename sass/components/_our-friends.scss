@@ -1,196 +1,222 @@
 .our-friends {
-    background-color: $color-light-l;
+  background-color: $color-light-l;
 }
 
 .our-friends__slider-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .our-friends__slide-container {
-    overflow: hidden;
-    flex-basis: 82.5%;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  flex-basis: 82.5%;
+}
+
+.our-friends__courusel {
+  display: flex;
+  width: 300%;
+  flex-shrink: 0;
+  transform: translateX(-33%);
+}
+
+
+
+.our-friends__slider {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  flex-basis: 100%;
 }
 
 .our-friends__title {
-    text-align: center;
-    color: $color-dark-l;
-    padding: 80px 0 60px;
-    margin: 0;
-}
-
-.our-friends__slider {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+  text-align: center;
+  color: $color-dark-l;
+  padding: 80px 0 60px;
+  margin: 0;
 }
 
 .slider-card__img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 30px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
 }
 
 .slider-card {
-    background-color: $color-light-s;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 270px;
-    border-radius: 9px;
-    transition: 0.5s;
-    &:hover {
-        cursor: pointer;
-        background-color: $color-light-xl;
-        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-        .slider-card__button {
-            background-color: $color-primary-light;
-            border: 2px solid $color-primary-light;
-        }
+  background-color: $color-light-s;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 270px;
+  border-radius: 9px;
+  transition: 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-light-xl;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+    .slider-card__button {
+      background-color: $color-primary-light;
+      border: 2px solid $color-primary-light;
     }
+  }
 }
 
 .slider-card__name {
-    margin-bottom: 30px;
-    text-align: center;
-    @extend %font-head;
-    @include font (2rem, 2.3rem, 0.06em);
-    color: $color-dark-l;
+  margin-bottom: 30px;
+  text-align: center;
+  @extend %font-head;
+  @include font(2rem, 2.3rem, 0.06em);
+  color: $color-dark-l;
 }
 
 .slider-card__button {
-    @extend %font-head;
-    @include font (1.7rem, 2.21rem, 0.06em);
-    color: $color-dark-3xl;
-    width: 187px;
-    height: 52px;
-    border: 2px solid $color-primary;
-    box-sizing: border-box;
-    border-radius: 100px;
-    margin: 0 auto 30px;
-    background-color: #FAFAFA;
-    cursor: pointer;
-    transition: 0.5s;
+  @extend %font-head;
+  @include font(1.7rem, 2.21rem, 0.06em);
+  color: $color-dark-3xl;
+  width: 187px;
+  height: 52px;
+  border: 2px solid $color-primary;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin: 0 auto 30px;
+  background-color: #FAFAFA;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .our-friends__button-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .our-friends__button {
-    @extend %font-head;
-    @include font (1.7rem, 2.21rem, 0.06em);
-    box-sizing: border-box;
-    color: $color-dark-3xl;
-    width: 261px;
-    height: 52px;
-    background-color: $color-primary;
-    margin: 60px auto 100px;
-    border-radius: 100px;
-    border: 2px solid $color-primary;
-    transition: 0.5s;
-    &:hover {
-        cursor: pointer;
-        border: 2px solid $color-primary-light;
-        background-color: $color-primary-light;
-    }
+  @extend %font-head;
+  @include font(1.7rem, 2.21rem, 0.06em);
+  box-sizing: border-box;
+  color: $color-dark-3xl;
+  width: 261px;
+  height: 52px;
+  background-color: $color-primary;
+  margin: 60px auto 100px;
+  border-radius: 100px;
+  border: 2px solid $color-primary;
+  transition: 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid $color-primary-light;
+    background-color: $color-primary-light;
+  }
 }
 
 .slide-button {
-    box-sizing: border-box;
-    border-radius: 100%;
-    cursor: pointer;
-    border: 2px solid $color-primary;
-    min-width: 52px;
-    min-height: 52px;
-    transition: 0.5s;
-    &:hover {
-        background-color: $color-primary-light;
-        border: 2px solid $color-primary-light;
-    }
+  box-sizing: border-box;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 2px solid $color-primary;
+  min-width: 52px;
+  min-height: 52px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: $color-primary-light;
+    border: 2px solid $color-primary-light;
+  }
 }
 
 .arrow-left {
-    position: relative;
-    top: 18px;
-    left: 17px;
-    fill: red;
+  position: relative;
+  top: 18px;
+  left: 17px;
+  fill: red;
 }
 
 .arrow-right {
-    transform: scale(-1, 1);
-    position: relative;
-    top: 18px;
-    left: 17px;
+  transform: scale(-1, 1);
+  position: relative;
+  top: 18px;
+  left: 17px;
 }
 
 @keyframes shiftLeft {
-    from {transform: translate(0);}
-    to {transform: translate(-110%);}
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-110%);
+  }
 }
 
 @keyframes shiftLeftBack {
-    from {transform: translate(110%);}
-    to {transform: translate(0);}
+  from {
+    transform: translate(110%);
+  }
+  to {
+    transform: translate(0);
+  }
 }
 
 .translate-left {
-    animation: shiftLeft 0.5s 1 ease-in-out;
+  animation: shiftLeft 0.5s 1 ease-in-out;
 }
 
 .translate-left-back {
-    animation: shiftLeftBack 0.5s 1 ease-in-out;
+  animation: shiftLeftBack 0.5s 1 ease-in-out;
 }
 
 .translate-right {
-    animation: shiftLeft 0.5s 1 ease-in-out;
-    animation-direction: reverse;
+  animation: shiftLeft 0.5s 1 ease-in-out;
+  animation-direction: reverse;
 }
 
 .translate-right-back {
-    animation: shiftLeftBack 0.5s 1 ease-in-out;
-    animation-direction: reverse;
+  animation: shiftLeftBack 0.5s 1 ease-in-out;
+  animation-direction: reverse;
 }
 
-@media screen and (max-width : 1279px) {
-    .our-friends__slider-container {
-        justify-content: center;
-    }
+@media screen and (max-width: 1279px) {
+  .our-friends__slider-container {
+    justify-content: center;
+  }
 
-    .our-friends__slider {
-        justify-content: center;
-        gap: 40px;
-        flex-basis: 85.5%;
-        & article:nth-child(3) {
-            display: none;
-        }
+  .our-friends__slider {
+    justify-content: center;
+    gap: 40px;
+    flex-basis: 85.5%;
+
+    & article:nth-child(3) {
+      display: none;
     }
+  }
 }
 
-@media screen and (max-width : 767px) {
-    .our-friends__title {
-        text-align: center;
-        @include font($size: 2.5rem, $height: 3.25rem, $spacing: 0.06em);
-        padding: 41px 0;
-    }
+@media screen and (max-width: 767px) {
+  .our-friends__title {
+    text-align: center;
+    @include font($size: 2.5rem, $height: 3.25rem, $spacing: 0.06em);
+    padding: 41px 0;
+  }
 
-    .our-friends__slider-container {
-        flex-flow: row wrap;
-        gap: 20px 26.66%;
-    }
+  .our-friends__slider-container {
+    flex-flow: row wrap;
+    gap: 20px 26.66%;
+  }
 
-    .our-friends__slider {
-        flex-basis: 100%;
-        order: -1;
-        & article:nth-child(2) {
-            display: none;
-        }
-    }
+  .our-friends__slider {
+    flex-basis: 100%;
+    order: -1;
 
-    .our-friends__button {
-        margin: 42px auto;
+    & article:nth-child(2) {
+      display: none;
     }
+  }
+
+  .our-friends__button {
+    margin: 42px auto;
+  }
 }

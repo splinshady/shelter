@@ -794,8 +794,24 @@ a {
 }
 
 .our-friends__slide-container {
+  display: flex;
+  flex-flow: row nowrap;
   overflow: hidden;
   flex-basis: 82.5%;
+}
+
+.our-friends__courusel {
+  display: flex;
+  width: 300%;
+  flex-shrink: 0;
+  transform: translateX(-33%);
+}
+
+.our-friends__slider {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  flex-basis: 100%;
 }
 
 .our-friends__title {
@@ -803,12 +819,6 @@ a {
   color: #545454;
   padding: 80px 0 60px;
   margin: 0;
-}
-
-.our-friends__slider {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
 }
 
 .slider-card__img {
