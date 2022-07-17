@@ -103,9 +103,9 @@ const renderCarousel = () => {
   for (let i = 0; i < 3; i++) {
     let slide = document.createElement('div');
     slide.className = 'our-friends__slider';
+    slide.id = `carousel-${i}`
     for (let j = 0; j < 3; j++) {
       slide.append(arrOfArticleTemplate[count].generateArticle());
-      console.log(count)
       count++;
     }
     carousel.append(slide);
@@ -125,3 +125,52 @@ const renderCarousel = () => {
 if (data) {
   renderCarousel();
 }
+
+// add carousel logic
+
+const slideLeftBtn = document.querySelector('.slide-left');
+const slideRightBtn = document.querySelector('.slide-right');
+const carousel = document.querySelector('.our-friends__courusel');
+let activeSlide = document.querySelector('#carousel-1');
+let leftSlide = document.querySelector('#carousel-0');
+let rightSlide = document.querySelector('#carousel-2');
+
+
+const slideLeft = () => {
+  carousel.classList.add('carousel-left');
+  slideLeftBtn.removeEventListener('click', slideLeft);
+  slideRightBtn.removeEventListener('click', slideRight);
+}
+
+const slideRight = () => {
+  carousel.classList.add('carousel-right');
+  slideLeftBtn.removeEventListener('click', slideLeft);
+  slideRightBtn.removeEventListener('click', slideRight);
+}
+
+slideLeftBtn.addEventListener('click', slideLeft);
+slideRightBtn.addEventListener('click', slideRight);
+
+carousel.addEventListener('animationend', (animationEvent) => {
+  switch (animationEvent.animationName) {
+    case 'move-left': {
+      let slide = activeSlide.innerHTML;
+      activeSlide.innerHTML = rightSlide.innerHTML;
+      rightSlide.innerHTML = leftSlide.innerHTML;
+      leftSlide.innerHTML = slide;
+      carousel.classList.remove('carousel-left');
+      break;
+    }
+    case 'move-right': {
+      let slide = activeSlide.innerHTML;
+      activeSlide.innerHTML = leftSlide.innerHTML;
+      leftSlide.innerHTML = rightSlide.innerHTML;
+      rightSlide.innerHTML = slide;
+      carousel.classList.remove('carousel-right');
+      break;
+    }
+  }
+
+  slideLeftBtn.addEventListener('click', slideLeft);
+  slideRightBtn.addEventListener('click', slideRight);
+});
