@@ -511,16 +511,15 @@ a {
   justify-content: space-between;
 }
 
-.navigation__li {
-  color: #CDCDCD;
+.navigation__link {
   cursor: pointer;
-  transition: 0.5s;
 }
-.navigation__li:hover .navigation__link {
+.navigation__link:hover .navigation__li {
+  transition: color 0.5s;
   color: #FAFAFA;
 }
 
-.navigation__link {
+.navigation__li {
   color: #CDCDCD;
 }
 
@@ -1216,12 +1215,12 @@ a {
   max-width: 1200px;
 }
 
-.pets-navigation__link {
-  color: #545454;
-  transition: 0.5s;
-}
-.pets-navigation__link:hover {
+.pets-navigation__link:hover .pets-navigation__li {
   color: #292929;
+}
+
+.pets-navigation__li {
+  color: #545454;
 }
 
 .pets-default-underline {
@@ -1273,7 +1272,6 @@ a {
 .button-number {
   cursor: default;
   background: #F1CDB3;
-  transition: 0.5s;
 }
 .button-number:hover {
   background: #F1CDB3;
