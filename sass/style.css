@@ -511,16 +511,15 @@ a {
   justify-content: space-between;
 }
 
-.navigation__li {
-  color: #CDCDCD;
+.navigation__link {
   cursor: pointer;
-  transition: 0.5s;
 }
-.navigation__li:hover .navigation__link {
+.navigation__link:hover .navigation__li {
+  transition: color 0.5s;
   color: #FAFAFA;
 }
 
-.navigation__link {
+.navigation__li {
   color: #CDCDCD;
 }
 
@@ -794,8 +793,66 @@ a {
 }
 
 .our-friends__slide-container {
+  display: flex;
+  flex-flow: row nowrap;
   overflow: hidden;
   flex-basis: 82.5%;
+}
+
+.our-friends__courusel {
+  display: flex;
+  width: 300%;
+  flex-shrink: 0;
+  transform: translateX(-33.33%);
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(-33.33%);
+    gap: 0px;
+  }
+  10% {
+    gap: 75px;
+  }
+  50% {
+    gap: 50px;
+  }
+  to {
+    transform: translateX(-66.66%);
+    gap: 0px;
+  }
+}
+@keyframes move-right {
+  from {
+    transform: translateX(-33.33%);
+    gap: 0px;
+  }
+  10% {
+    gap: 75px;
+  }
+  50% {
+    gap: 50px;
+  }
+  to {
+    transform: translateX(0);
+    gap: 0px;
+  }
+}
+.carousel-left {
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+
+.carousel-right {
+  animation-name: move-right;
+  animation-duration: 1s;
+}
+
+.our-friends__slider {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  flex-basis: 100%;
 }
 
 .our-friends__title {
@@ -803,12 +860,6 @@ a {
   color: #545454;
   padding: 80px 0 60px;
   margin: 0;
-}
-
-.our-friends__slider {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
 }
 
 .slider-card__img {
@@ -1164,12 +1215,12 @@ a {
   max-width: 1200px;
 }
 
-.pets-navigation__link {
-  color: #545454;
-  transition: 0.5s;
-}
-.pets-navigation__link:hover {
+.pets-navigation__link:hover .pets-navigation__li {
   color: #292929;
+}
+
+.pets-navigation__li {
+  color: #545454;
 }
 
 .pets-default-underline {
@@ -1221,7 +1272,6 @@ a {
 .button-number {
   cursor: default;
   background: #F1CDB3;
-  transition: 0.5s;
 }
 .button-number:hover {
   background: #F1CDB3;

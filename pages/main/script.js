@@ -1,4 +1,5 @@
-import { Modal } from "./modal.js";
+import {Modal} from "./modal.js";
+import {data} from "./data.js";
 
 const burger = document.querySelector('.burger');
 const headerNavigation = document.querySelector('.header__navigation');
@@ -6,274 +7,170 @@ const navigation = document.querySelector('.navigation');
 const logo = document.querySelector('.header__logo');
 
 if (burger) {
-    burger.addEventListener('click', (event) => {
-        document.body.classList.toggle('_lock');
-        burger.classList.toggle('burger_active');
-        headerNavigation.classList.toggle('header__navigation_active');
-        navigation.classList.toggle('navigation_active');
-        logo.classList.toggle('header__logo_burger');
-    })
+  burger.addEventListener('click', (event) => {
+    document.body.classList.toggle('_lock');
+    burger.classList.toggle('burger_active');
+    headerNavigation.classList.toggle('header__navigation_active');
+    navigation.classList.toggle('navigation_active');
+    logo.classList.toggle('header__logo_burger');
+  })
 }
 
 if (headerNavigation) {
-    headerNavigation.addEventListener('click', (event) => {
-        document.body.classList.remove('_lock');
-        burger.classList.remove('burger_active');
-        headerNavigation.classList.remove('header__navigation_active');
-        navigation.classList.remove('navigation_active');
-        logo.classList.remove('header__logo_burger');
-    })
+  headerNavigation.addEventListener('click', (event) => {
+    document.body.classList.remove('_lock');
+    burger.classList.remove('burger_active');
+    headerNavigation.classList.remove('header__navigation_active');
+    navigation.classList.remove('navigation_active');
+    logo.classList.remove('header__logo_burger');
+  })
 }
 
 const navigationLinks = document.querySelectorAll('.navigation__link');
 const navigationLinksPets = document.querySelectorAll('.pets-navigation__link');
 
 navigationLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-        if (burger.classList.contains('burger_active')) {
-            document.body.classList.remove('_lock');
-            burger.classList.remove('burger_active');
-            headerNavigation.classList.remove('header__navigation_active');
-            navigation.classList.remove('navigation_active');
-            logo.classList.remove('header__logo_burger');
-        }
-    })
+  link.addEventListener('click', (event) => {
+    if (burger.classList.contains('burger_active')) {
+      document.body.classList.remove('_lock');
+      burger.classList.remove('burger_active');
+      headerNavigation.classList.remove('header__navigation_active');
+      navigation.classList.remove('navigation_active');
+      logo.classList.remove('header__logo_burger');
+    }
+  })
 })
 
 navigationLinksPets.forEach(link => {
-    link.addEventListener('click', (event) => {
-        if (burger.classList.contains('burger_active')) {
-            document.body.classList.remove('_lock');
-            burger.classList.remove('burger_active');
-            headerNavigation.classList.remove('header__navigation_active');
-            navigation.classList.remove('navigation_active');
-            logo.classList.remove('header__logo_burger');
-        }
-    })
-})
-
-
-
-
-
-
-
-
-const data = [
-    {
-        "name": "Jennifer",
-        "dataId": "1",
-        "img": "../../assets/images/pets-jennifer.png",
-        "type": "Dog",
-        "breed": "Labrador",
-        "description": "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
-        "age": "2 months",
-        "inoculations": ["none"],
-        "diseases": ["none"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Sophia",
-        "dataId": "2",
-        "img": "../../assets/images/sof.png",
-        "type": "Dog",
-        "breed": "Shih tzu",
-        "description": "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
-        "age": "1 month",
-        "inoculations": ["parvovirus"],
-        "diseases": ["none"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Woody",
-        "dataId": "3",
-        "img": "../../assets/images/pets-woody.png",
-        "type": "Dog",
-        "breed": "Golden Retriever",
-        "description": "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
-        "age": "3 years 6 months",
-        "inoculations": ["adenovirus", "distemper"],
-        "diseases": ["right back leg mobility reduced"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Scarlett",
-        "dataId": "4",
-        "img": "../../assets/images/scarlett.png",
-        "type": "Dog",
-        "breed": "Jack Russell Terrier",
-        "description": "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",
-        "age": "3 months",
-        "inoculations": ["parainfluenza"],
-        "diseases": ["none"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Katrine",
-        "dataId": "5",
-        "img": "../../assets/images/pets-katrine.png",
-        "type": "Cat",
-        "breed": "British Shorthair",
-        "description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
-        "age": "6 months",
-        "inoculations": ["panleukopenia"],
-        "diseases": ["none"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Timmy",
-        "dataId": "6",
-        "img": "../../assets/images/timmy.png",
-        "type": "Cat",
-        "breed": "British Shorthair",
-        "description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
-        "age": "2 years 3 months",
-        "inoculations": ["calicivirus", "viral rhinotracheitis"],
-        "diseases": ["kidney stones"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Freddie",
-        "dataId": "7",
-        "img": "../../assets/images/freddie.png",
-        "type": "Cat",
-        "breed": "British Shorthair",
-        "description": "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
-        "age": "2 months",
-        "inoculations": ["rabies"],
-        "diseases": ["none"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Charly",
-        "dataId": "8",
-        "img": "../../assets/images/charly.png",
-        "type": "Dog",
-        "breed": "Jack Russell Terrier",
-        "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
-        "age": "8 years",
-        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
-        "diseases": ["deafness", "blindness"],
-        "parasites": ["lice", "fleas"]
+  link.addEventListener('click', (event) => {
+    if (burger.classList.contains('burger_active')) {
+      document.body.classList.remove('_lock');
+      burger.classList.remove('burger_active');
+      headerNavigation.classList.remove('header__navigation_active');
+      navigation.classList.remove('navigation_active');
+      logo.classList.remove('header__logo_burger');
     }
-];
-
-const generateArrArticles = (data) => {
-    let articleArr = [];
-    data.forEach(article => {
-        articleArr.push(new Article(article))
-    });
-    return articleArr;
-}
-
+  })
+})
 
 
 class Article {
-    constructor({ name, img, breed, dataId, type, ...rest }) {
-        this.name = name;
-        this.img = img;
-        this.breed = breed;
-        this.dataId = dataId;
-    }
+  constructor({name, img, breed, dataId, type, ...rest}) {
+    this.name = name;
+    this.img = img;
+    this.breed = breed;
+    this.dataId = dataId;
+  }
 
-    generateArticle() {
-        let template = '';
-        let article = document.createElement('article');
-        article.className = 'slider-card';
-        article.setAttribute('data-id', `${this.dataId}`);
+  generateArticle() {
+    let template = '';
+    let article = document.createElement('article');
+    article.className = 'slider-card';
+    article.setAttribute('data-id', `${this.dataId}`);
 
-        this.img &&
-            (template += `<img src=${this.img} alt=${this.breed} class="slider-card__img">`);
+    this.img &&
+    (template += `<img src=${this.img} alt=${this.breed} class="slider-card__img">`);
 
-        this.name &&
-            (template += `<span class="slider-card__name">${this.name}</span>`);
+    this.name &&
+    (template += `<span class="slider-card__name">${this.name}</span>`);
 
-        template += `<button class="slider-card__button">Learn more</button>`;
+    template += `<button class="slider-card__button">Learn more</button>`;
 
-        article.innerHTML = template;
+    article.innerHTML = template;
 
-        return article;
-    }
+    return article;
+  }
+}
+
+const generateArrArticles = (data) => {
+  let articleArr = [];
+  data.forEach(article => {
+    articleArr.push(new Article(article))
+  });
+  return articleArr;
 }
 
 const arrOfArticleTemplate = generateArrArticles(data);
-const wrapper = document.querySelector('.our-friends__slider');
+const wrapperOurFriends = document.querySelector('.our-friends__slide-container');
 
-const renderArticle = () => {
-    wrapper.innerHTML = '';
-    for (let i = 0; i < 3; i++) {
-        wrapper.append(arrOfArticleTemplate[i].generateArticle());
+const renderCarousel = () => {
+  wrapperOurFriends.innerHTML = '';
+
+  let carousel = document.createElement('div');
+  carousel.className = 'our-friends__courusel';
+
+  let count = 0;
+  for (let i = 0; i < 3; i++) {
+    let slide = document.createElement('div');
+    slide.className = 'our-friends__slider';
+    slide.id = `carousel-${i}`
+    for (let j = 0; j < 3; j++) {
+      slide.append(arrOfArticleTemplate[count].generateArticle());
+      count++;
     }
-    wrapper.addEventListener('click', (event) => {
-        let clickedCardId = event.target.closest('.slider-card').getAttribute('data-id');
-        let dataCard = data.find(item => item.dataId == clickedCardId);
-        
-        let modal = new Modal(dataCard);
-        modal.buildModal();
-    })
+    carousel.append(slide);
+  }
+
+  wrapperOurFriends.append(carousel);
+
+  wrapperOurFriends.addEventListener('click', (event) => {
+    let clickedCardId = event.target.closest('.slider-card').getAttribute('data-id');
+    let dataCard = data.find(item => item.dataId == clickedCardId);
+
+    let modal = new Modal(dataCard);
+    modal.buildModal();
+  })
 }
 
 if (data) {
-    renderArticle();
+  renderCarousel();
 }
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+// add carousel logic
+
+const slideLeftBtn = document.querySelector('.slide-left');
+const slideRightBtn = document.querySelector('.slide-right');
+const carousel = document.querySelector('.our-friends__courusel');
+let activeSlide = document.querySelector('#carousel-1');
+let leftSlide = document.querySelector('#carousel-0');
+let rightSlide = document.querySelector('#carousel-2');
+
+
+const slideLeft = () => {
+  carousel.classList.add('carousel-right');
+  slideLeftBtn.removeEventListener('click', slideLeft);
+  slideRightBtn.removeEventListener('click', slideRight);
 }
 
-const slideLeft = document.querySelector('.slide-left');
-const slideRight = document.querySelector('.slide-right');
+const slideRight = () => {
+  carousel.classList.add('carousel-left');
+  slideLeftBtn.removeEventListener('click', slideLeft);
+  slideRightBtn.removeEventListener('click', slideRight);
+}
 
-let prevRandom = [1, 2, 3];
-slideLeft.addEventListener('click', () => {
-    let promise = new Promise(function (resolve, reject) {
-        wrapper.className = 'our-friends__slider translate-left';
-        setTimeout(() => resolve(), 500);
-    });
-    promise.then(() => {
-        wrapper.innerHTML = '';
-        let nextRandom = [];
-        for (let i = 0; i < 3; i++) {
-            let randomNum = getRandomInt(0, arrOfArticleTemplate.length);
-            while (nextRandom.includes(randomNum) || prevRandom.includes(randomNum)) {
-                randomNum = getRandomInt(0, arrOfArticleTemplate.length);
-            }
-            nextRandom.push(randomNum)
-        }
-        for (let i = 0; i < nextRandom.length; i++) {
-            wrapper.append(arrOfArticleTemplate[nextRandom[i]].generateArticle());
-        }
-        prevRandom = nextRandom;
-    });
-    promise.then(() => {
-        wrapper.className = 'our-friends__slider translate-left-back';
-    });
-})
+slideLeftBtn.addEventListener('click', slideLeft);
+slideRightBtn.addEventListener('click', slideRight);
 
-slideRight.addEventListener('click', () => {
-    let promise = new Promise(function (resolve, reject) {
-        wrapper.className = 'our-friends__slider translate-right-back';
-        setTimeout(() => resolve(), 500);
-    });
-    promise.then(() => {
-        wrapper.innerHTML = '';
-        let nextRandom = [];
-        for (let i = 0; i < 3; i++) {
-            let randomNum = getRandomInt(0, arrOfArticleTemplate.length);
-            while (nextRandom.includes(randomNum) || prevRandom.includes(randomNum)) {
-                randomNum = getRandomInt(0, arrOfArticleTemplate.length);
-            }
-            nextRandom.push(randomNum)
-        }
-        for (let i = 0; i < nextRandom.length; i++) {
-            wrapper.append(arrOfArticleTemplate[nextRandom[i]].generateArticle());
-        }
-        prevRandom = nextRandom;
-        console.log('ddd' + nextRandom)
-    });
-    promise.then(() => {
-        wrapper.className = 'our-friends__slider translate-right';
-    });
-})
+carousel.addEventListener('animationend', (animationEvent) => {
+  switch (animationEvent.animationName) {
+    case 'move-left': {
+      let slide = activeSlide.innerHTML;
+      activeSlide.innerHTML = rightSlide.innerHTML;
+      rightSlide.innerHTML = leftSlide.innerHTML;
+      leftSlide.innerHTML = slide;
+      carousel.classList.remove('carousel-left');
+      break;
+    }
+    case 'move-right': {
+      let slide = activeSlide.innerHTML;
+      activeSlide.innerHTML = leftSlide.innerHTML;
+      leftSlide.innerHTML = rightSlide.innerHTML;
+      rightSlide.innerHTML = slide;
+      carousel.classList.remove('carousel-right');
+      break;
+    }
+  }
+
+  slideLeftBtn.addEventListener('click', slideLeft);
+  slideRightBtn.addEventListener('click', slideRight);
+});
