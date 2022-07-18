@@ -1,124 +1,124 @@
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .header__wrapper {
-    height: 60px;
-    padding: 60px 0px 60px;
+  height: 60px;
+  padding: 60px 0px 60px;
 }
 
 .header__logo {
-    display: flex;
-    flex-direction: column;
-    margin-right: 81px;
-    width: 184px;
-    white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  margin-right: 81px;
+  width: 184px;
+  white-space: nowrap;
 }
 
 .logo__title {
-    margin: 0 0 11px 0;
-    color: $color-primary;
+  margin: 0 0 11px 0;
+  color: $color-primary;
 }
 
 .header__logo-subtitle {
-    @extend %font-paragraph;
-    @include font ($size: 1.3rem, $height: 1.495rem, $spacing: 0.10em);
-    color: $color-light-xl;
-    margin: 0 0 0 4px;
+  @extend %font-paragraph;
+  @include font($size: 1.3rem, $height: 1.495rem, $spacing: 0.10em);
+  color: $color-light-xl;
+  margin: 0 0 0 4px;
 }
 
 .navigation {
-    @extend %font-paragraph;
-    @include font ($size: 1.5rem, $height: 2.4rem);
-    margin: 0;
-    padding: 16px 0 0 0;
-    width: 443px;
-    display: flex;
-    justify-content: space-between;
-    
-}
+  @extend %font-paragraph;
+  @include font($size: 1.5rem, $height: 2.4rem);
+  margin: 0;
+  padding: 16px 0 0 0;
+  width: 443px;
+  display: flex;
+  justify-content: space-between;
 
-.navigation__li {
-    color: $color-dark-s;
-    cursor: pointer;
-    transition: 0.5s;
-    &:hover {
-        .navigation__link {
-            color: $color-light-s;
-        }
-    }
 }
 
 .navigation__link {
-    color: $color-dark-s;
+  cursor: pointer;
+  &:hover {
+    .navigation__li {
+      transition: color 0.5s;
+      color: $color-light-s;
+    }
+  }
+}
+
+.navigation__li {
+  color: $color-dark-s;
 }
 
 .default-underline {
-    .navigation__link {
-        color: $color-light-s;
-    }
-    border-bottom: 3px solid $color-primary;
+  .navigation__link {
+    color: $color-light-s;
+  }
+
+  border-bottom: 3px solid $color-primary;
 }
 
 .header__logo_burger {
+  position: fixed;
+  top: 30px;
+  right: 83px;
+  margin: 0;
+  z-index: 10;
+}
+
+@media screen and (max-width: 1279px) {
+  .header__wrapper {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__navigation {
     position: fixed;
-    top: 30px;
-    right: 83px;
-    margin: 0;
-    z-index: 10;
-}
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: $color-blackout;
+  }
 
-@media screen and (max-width : 1279px) {
-    .header__wrapper {
-        padding-top: 30px;
-    }
-}
+  .header__navigation_active {
+    right: 0;
+  }
 
-@media screen and (max-width : 767px) {
-    .header__navigation {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100%;
-        background-color: $color-blackout;
-    }
+  .navigation_active {
+    right: 0 !important;
+  }
 
-    .header__navigation_active {
-        right: 0;
-    }
+  .navigation {
+    @include font($size: 3.2rem, $height: 5.12rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100%;
+    background-color: $color-dark-3xl;
+    transition: right 0.7s;
+    gap: 40px;
+    padding: 0;
+  }
 
-    .navigation_active {
-        right: 0 !important; 
-    }
+  .navigation__li {
+    flex-basis: content;
+  }
 
-    .navigation {
-        @include font ($size: 3.2rem, $height: 5.12rem);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        z-index: 2;
-        top: 0;
-        right: -100%;
-        width: 320px;
-        height: 100%;
-        background-color: $color-dark-3xl;
-        transition: right 0.7s;
-        gap: 40px;
-        padding: 0;
-    }
-
-    .navigation__li {
-        flex-basis: content;
-    }
-
-    .header__logo {
-        margin-right: 43px;
-    }
+  .header__logo {
+    margin-right: 43px;
+  }
 }

@@ -137,13 +137,13 @@ let rightSlide = document.querySelector('#carousel-2');
 
 
 const slideLeft = () => {
-  carousel.classList.add('carousel-left');
+  carousel.classList.add('carousel-right');
   slideLeftBtn.removeEventListener('click', slideLeft);
   slideRightBtn.removeEventListener('click', slideRight);
 }
 
 const slideRight = () => {
-  carousel.classList.add('carousel-right');
+  carousel.classList.add('carousel-left');
   slideLeftBtn.removeEventListener('click', slideLeft);
   slideRightBtn.removeEventListener('click', slideRight);
 }
