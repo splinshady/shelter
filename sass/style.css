@@ -516,7 +516,7 @@ a {
 }
 .navigation__link:hover .navigation__li {
   transition: color 0.5s;
-  color: #FAFAFA;
+  color: #ffffff;
 }
 
 .navigation__li {
@@ -527,7 +527,7 @@ a {
   border-bottom: 3px solid #F1CDB3;
 }
 .default-underline .navigation__link {
-  color: #FAFAFA;
+  color: #ffffff;
 }
 
 .header__logo_burger {
@@ -811,12 +811,6 @@ a {
     transform: translateX(-33.33%);
     gap: 0px;
   }
-  10% {
-    gap: 75px;
-  }
-  50% {
-    gap: 50px;
-  }
   to {
     transform: translateX(-66.66%);
     gap: 0px;
@@ -826,12 +820,6 @@ a {
   from {
     transform: translateX(-33.33%);
     gap: 0px;
-  }
-  10% {
-    gap: 75px;
-  }
-  50% {
-    gap: 50px;
   }
   to {
     transform: translateX(0);
@@ -851,7 +839,7 @@ a {
 .our-friends__slider {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-basis: 100%;
 }
 
@@ -869,7 +857,7 @@ a {
 }
 
 .slider-card {
-  background-color: #FAFAFA;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1067,7 +1055,7 @@ a {
   height: 500px;
   border-radius: 9px;
   overflow: hidden;
-  background-color: #FAFAFA;
+  background-color: #ffffff;
 }
 
 .modal__close-btn {
@@ -1258,6 +1246,7 @@ a {
   justify-content: space-between;
   align-content: space-around;
   height: 930px;
+  padding-bottom: 40px;
 }
 
 .pets-our-friends__slider-buttons {
