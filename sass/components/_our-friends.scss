@@ -25,15 +25,11 @@
 
 @keyframes move-left{
   from {transform: translateX(-33.33%); gap: 0px;}
-  10% {gap: 75px}
-  50% {gap: 50px}
   to {transform: translateX(-66.66%); gap: 0px;}
 }
 
 @keyframes move-right{
   from {transform: translateX(-33.33%); gap: 0px;}
-  10% {gap: 75px}
-  50% {gap: 50px}
   to {transform: translateX(0); gap: 0px;}
 }
 
@@ -50,7 +46,7 @@
 .our-friends__slider {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-basis: 100%;
 }
 
