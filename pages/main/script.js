@@ -12,7 +12,6 @@ if (burger) {
     burger.classList.toggle('burger_active');
     headerNavigation.classList.toggle('header__navigation_active');
     navigation.classList.toggle('navigation_active');
-    logo.classList.toggle('header__logo_burger');
   })
 }
 
